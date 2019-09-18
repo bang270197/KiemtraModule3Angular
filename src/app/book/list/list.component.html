@@ -1,0 +1,26 @@
+<div *ngIf="message">
+  <h4 style="color: red">{{message}}</h4>
+</div>
+<h3><p>Trang co {{total}} Phan tu</p></h3>
+<table class="table table-bordered" style="text-align: center">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Title</th>
+    <th scope="col" >Author</th>
+    <th scope="col" >Description</th>
+    <th scope="col" colspan="3"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let b of books">
+    <th scope="row">{{b.id}}</th>
+    <td>{{b.title}}</td>
+    <td>{{b.author}}</td>
+    <td>{{b.description}}</td>
+    <td><button type="button" class="btn btn-info" routerLink="/book/view/{{b.id}}">View</button></td>
+    <td><button type="button" class="btn btn-success" routerLink="/book/edit/{{b.id}}">Edit</button></td>
+    <td><button type="button" class="btn btn-danger" (click)="deleteBook(b.id)">Delete</button></td>
+  </tr>
+  </tbody>
+</table>

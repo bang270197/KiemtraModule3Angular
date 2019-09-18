@@ -1,0 +1,20 @@
+<div *ngIf="message">
+  <h4 style="color: red">{{message}}</h4>
+</div>
+
+
+<form #FormAdd="ngForm" (ngSubmit)="AddBook(FormAdd)">
+  <div class="form-group">
+  <label>Title</label>
+  <input type="text" class="form-control" name="title" placeholder="title" ngModel>
+</div>
+  <div class="form-group">
+    <label>Author</label>
+    <input type="text" class="form-control" name="author" placeholder="author" ngModel>
+  </div>
+  <div class="form-group">
+    <label>Discription</label>
+    <input type="text" class="form-control" name="description" placeholder="discription" ngModel>
+  </div>
+  <button type="submit" class="btn btn-primary">AddCustomer</button>
+</form>
